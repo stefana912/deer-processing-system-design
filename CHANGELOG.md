@@ -1,13 +1,15 @@
 # Changelog
 
 Every change to the app since the first commit, newest first, from the project's git history:
-60 commits from August 16 to November 5, 2026, plus 2 pull-request merges.
+62 commits from August 16 to November 5, 2026, plus 2 pull-request merges.
 
 Each line is the commit message as written at the time. Read from the bottom up, it's a record of
 what the first version didn't know about the business.
 
 ## November 5, 2026
 
+- Ask before re-pricing an edited order; limit "All this season" to the active season
+- Docs: bring the design set up to date with the code
 - Fix "clear test data": it failed as soon as there was any customer
 - Owner screen: title only, no description of what's behind it
 - Owner area: money totals behind a password

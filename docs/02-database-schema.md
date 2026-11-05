@@ -8,8 +8,8 @@
 1. **Money is stored in integer cents.** Never floats. `15000` = $150.00.
 2. **Prices are snapshotted onto the order.** Every charge line stores the amount as calculated
    when the order was saved, and every sausage line stores its name, unit price and deer pounds.
-   Changing a price in Settings does not rewrite a saved order. (Editing an order re-prices it —
-   see doc 4.)
+   Changing a price in Settings does not rewrite a saved order. (Editing one after a price
+   change asks whether to keep its prices or use today's — see doc 4.)
 3. **Customer, order and each service are separate.** One customer → many orders. One order →
    many menu lines, many charges, one status row per service.
 4. **Nothing is deleted.** Voiding sets a flag. History is permanent. The one exception is

@@ -49,13 +49,10 @@ app, and each one changed the data model, not just a screen.
 | Oct 14–Nov 3 | Menu items aren't all sausage: jerky is all venison, pastrami is a whole roast, Canadian Bacon is all pork, burgers sell by the pack | What an item is made of moved onto the item |
 | Oct 24 | Some customers want the whole deer as sausage | All Sausage, its own flat price |
 | Nov 5 | The owner doesn't want season totals visible to staff | The Owner area behind a password |
+| Nov 5 | Editing a paid order's phone number quietly re-priced it at new prices | The counter chooses: keep the original prices or use today's |
 
 ## Known gaps in what's built
 
-- **Editing re-prices at current prices** (doc 4). Older orders edited after a price change move to
-  the new price.
-- **"All this season" isn't filtered by season.** It shows every active order. With one season in
-  the database that's the same thing; it won't be once the 2027 season starts.
 - **The Overdue pickup tile always reads 0**, and the Home printer indicator always reads Ready.
 - **All Orders shows at most 300 orders** and has no export.
 - **`print.auto_print_on_save`** is a setting nothing reads.
@@ -70,8 +67,7 @@ In priority order:
    have a factual basis.
 3. **A dedicated always-on mini PC**, once someone needs the app while the owner's laptop is closed.
 4. **CSV / PDF export from All Orders, and a season-end archive.**
-5. **Season filtering** for "All this season" before the next season starts.
-6. A storage-location field, a customer merge tool, batch sends to processors, and a manual print
+5. A storage-location field, a customer merge tool, batch sends to processors, and a manual print
    size override — each when a real need shows up.
 
 ## Timeline of what shipped
@@ -86,9 +82,9 @@ The full list is in CHANGELOG.md. In short:
 | Sep 12–20 | Hunter ID, ticket correction, donation totals, date ranges, Stats, editable sausage menu, elk, restore from backup |
 | Oct 4–9 | State donation form, version display, one-bill euro, moose and companies, Hunter ID carry-forward, the name fix |
 | Oct 14–Nov 3 | Jerky, special items, All Sausage, specialty animals, roasts, Hamburgers |
-| Nov 5 | Owner area; Clear test data fixed |
+| Nov 5 | Owner area; Clear test data fixed; the keep-or-update price choice on edits; "All this season" limited to the active season |
 
-62 commits and 22 database migrations in 12 weeks.
+More than 60 commits and 22 database migrations in 12 weeks.
 
 ## Design decisions from the original review
 

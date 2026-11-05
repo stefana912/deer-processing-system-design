@@ -79,7 +79,7 @@ backups folder off-site.
 | **Migrations** | 22 numbered `.sql` files in `src/server/migrations/`, run at startup | The app upgrades its own schema when it starts. Gina never runs a migration command. A migration that rebuilds a table is marked `-- migration: no-foreign-keys` so the runner switches foreign keys off around it. |
 | **Frontend** | Plain HTML, CSS and JavaScript modules — one file set per screen in `public/`, no build step | The original design called for React, TypeScript and Vite. Plain modules turned out to be enough for ten screens, and removing the build step removed the last thing that could break between the Mac and the shop. |
 | **Print rendering** | Server-rendered HTML + `print.css`, printed from the browser | See doc 5. |
-| **Testing** | `node --test` — 18 test files, about 200 tests | Pricing, validation, donations, restore, owner area, hunter IDs and the other rules that must never regress silently. |
+| **Testing** | `node --test` — 19 test files, about 210 tests | Pricing, validation, donations, restore, owner area, hunter IDs and the other rules that must never regress silently. |
 
 ### Zero runtime dependencies
 

@@ -31,7 +31,7 @@ Screenshots in `docs/images/` use made-up demo data from `scripts/seed-demo.js`.
 ## Status
 
 **Live.** Installed on Gina's laptop since August 18 and the system of record for new orders.
-About 200 automated tests pass. The application code and its install guide live in a private
+About 210 automated tests pass. The application code and its install guide live in a private
 repository; this public repository holds the design documents and the change history.
 
 These documents began as the original design, written and reviewed before any code. They have
@@ -66,7 +66,7 @@ The shop is in New York State. No sales tax: processing is a service, not a sale
 | Sausage and jerky | A menu of sausage, jerky, roasts, all-pork items and pack items, plus special items typed at the counter |
 | No donation screen; transcribe from an export | A Donations screen that builds the state's HPNAP form |
 | Call log, pickup records, batch shipments, Google Sheets mirror | Not built |
-| Edits keep original prices | Edits re-price at current Settings prices (doc 4) |
+| Edits keep original prices | When prices changed, the edit asks: keep the original prices or use today's (doc 4) |
 | — | Hunting companies, the customer-name fix, Names to check, the Owner area |
 
 ## What's built vs. still on the list
@@ -87,7 +87,6 @@ screen.
 2. The 24-hour pickup clock and call log (the Overdue tile reads zero until then)
 3. A dedicated mini PC, once someone needs the app while Gina's laptop is closed
 4. CSV / PDF export and a season-end archive
-5. Season filtering for "All this season" before the 2027 season
 
 ## The five decisions that matter most
 

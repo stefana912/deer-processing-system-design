@@ -199,11 +199,32 @@ sausage, to a roast, to "not a roast", as the actual rules came out one screen a
 When an order is saved, every price used is copied into `order_charges` and `order_items`.
 Changing a price in Settings doesn't touch saved orders or their reprints.
 
-**Editing an order re-prices it at the current Settings prices.** The original design said edits
-should keep the original prices unless asked; that isn't what was built. If the butcher price
-goes from $150 to $165 mid-season, any older order that's edited afterward moves to $165. Until
-that changes, avoid editing older orders after a price change, or correct the total with an
-adjustment.
+Before November 5, 2026, editing an order silently re-priced it at the current Settings prices,
+so an older order edited after a price change moved to the new price.
+
+**Editing an order after a price change asks which prices to use** (`src/server/lib/repricing.js`,
+November 2026). The edit is priced two ways — at the prices the order was taken at, and at today's
+— and when the totals differ, saving stops with:
+
+> **Prices have changed since this order was taken**
+> At the prices it was taken at: **$210.00** · At today's prices: **$225.00**
+> Butcher Processing: $150.00 → $165.00 · The customer has already paid …
+> [ Go back ] [ Use today's prices ] [ **Keep original prices** ]
+
+- **Keep original prices** is the highlighted choice. It's for edits that have nothing to do with
+  money — a phone number, a misspelled name — often on an order that's already paid. Every line the
+  order already had keeps the price it was taken at. A line added in this edit (a cape that wasn't
+  there before) is priced at today's price, since it had no earlier price.
+- **Use today's prices** is for edits made to bring the price in line. Everything is priced from
+  today's Settings and menu, as a new order would be, including sausage, jerky and pack prices.
+- When the totals agree, nothing is asked.
+- The order's history records which was chosen, e.g. *"kept the original prices (current prices
+  would be $165.00)"*.
+
+The original prices aren't stored as settings anywhere, but every one of them is on the order's
+saved charge lines, so they are read back from there: the butcher fee, All Sausage, the per-pound
+rate (charge ÷ weight), extra cuts, cape and plaque. Menu lines carry their own unit and pack
+prices. While editing, the form's running total previews the original prices.
 
 ### Adjustment, not override
 

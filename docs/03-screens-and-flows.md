@@ -106,7 +106,8 @@ The order screen itself has:
 - **Header** — the ticket number as the biggest thing on the page, season, customer, animal,
   drop-off time, storage location if recorded, a warning if there's no Hunter ID, and the total
   with its payment status.
-- **Butcher** and **Pricing** panels, and **✏️ Change this order** to edit.
+- **Butcher** and **Pricing** panels, and **✏️ Change this order** to edit. If prices have changed in Settings since the order
+  was taken, saving the edit asks whether to keep the original prices or use today's (doc 4).
 - **Payment** — balance due, then amount, method (cash, check, card, other) and a date and time
   that defaults to now but can be set to when the money actually changed hands. Recorded payments
   are listed and can be removed if entered by mistake. A euro mount has its own balance line.
@@ -152,9 +153,11 @@ did I get last year?" without opening anything.
 
 ![All orders grid](images/all-orders.png)
 
-- **Quick views:** All this season, Today's drop-offs, Butcher not done, Waiting sausage, Waiting
+- **Quick views:** All this season (the active season only), Today's drop-offs, Butcher not done, Waiting sausage, Waiting
   euro, Ready to call, Unpaid (picked up but not paid), Donations, Not weighed, Voided.
-- **Search** by ticket, name, phone, company or animal.
+- **Search** by ticket, name, phone, company or animal. With no quick view picked, a search looks
+  across every season — ticket numbers repeat yearly — with this season first, and an order from
+  another season carries a tag such as *2025 Season* next to its ticket number.
 - **Date range** with Today, This weekend, Last weekend, This week and Last week shortcuts.
 - **Summary line** for whatever is showing: order count, donations, donated pounds, and how many
   are not weighed yet. The dollar figures (order total, collected, still owed, donation dollars)
