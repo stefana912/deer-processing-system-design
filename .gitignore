@@ -1,0 +1,16 @@
+# macOS / Windows clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Never publish data from the shop
+*.db
+*.db-wal
+*.db-shm
+data/
+backups/
+
+# Editors and tooling
+node_modules/
+.vscode/
+.idea/
